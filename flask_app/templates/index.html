@@ -1,0 +1,108 @@
+<!-- flask_app/templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Classification</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: #333;
+
+            /* Centrage du contenu */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #2c3e50;
+        }
+
+        select, input[type="file"], input[type="submit"] {
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .uploaded-image {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .uploaded-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Brain Tumor Classification</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="model">Select Model:</label>
+            <select name="model" id="model">
+                <option value="pytorch">PyTorch</option>
+                <option value="tensorflow">TensorFlow</option>
+            </select><br><br>
+
+            <label for="image">Upload Image:</label>
+            <input type="file" name="image" id="image" accept="image/*"><br><br>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if image_url %}
+            <div class="uploaded-image">
+                <h2>Uploaded Image:</h2>
+                <img src="{{ image_url }}" alt="Uploaded Image">
+            </div>
+        {% endif %}
+
+        {% if prediction %}
+            <h2>Prediction: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+
+    <footer>
+        Created by Dr. Fatou Kine TOURE
+    </footer>
+</body>
+</html>

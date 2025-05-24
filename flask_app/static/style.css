@@ -1,0 +1,82 @@
+/* Base du corps */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #e6f2ff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Titre principal */
+h1 {
+    color: #0077cc;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+/* Libellés */
+label {
+    font-weight: 600;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Inputs et bouton */
+select, input[type="file"], button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Bouton */
+button {
+    background-color: #0077cc;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    border: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Résultat de la classification */
+.result {
+    margin-top: 30px;
+    background: #ecf7ff;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #0077cc;
+    font-size: 1.1rem;
+    color: #005fa3;
+}
+
+/* Messages d'erreur (optionnel) */
+.error {
+    margin-top: 30px;
+    background: #ffe6e6;
+    padding: 15px;
+    border: 1px solid red;
+    border-radius: 6px;
+    color: red;
+}
