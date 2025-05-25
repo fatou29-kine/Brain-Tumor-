@@ -1,0 +1,7 @@
+flask
+torch
+torchvision
+tensorflow
+pillow
+numpy
+matplotlib

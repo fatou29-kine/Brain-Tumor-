@@ -1,11 +1,7 @@
-# utils/predict.py
-
 import sys
 import os
-
-# 🔧 Ajouter le chemin parent pour que les modules soient trouvés
+#  Ajouter le chemin parent pour que les modules soient trouvés
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 import argparse
 import torch
 import tensorflow as tf
@@ -36,10 +32,10 @@ def main():
     # Load the appropriate model based on framework
     if args.framework == 'torch':
         model = get_torch_model()
-        model.load_state_dict(torch.load('fatou_model.torch', map_location='cpu'))  # 🚨 ajusté le chemin si le fichier est dans la racine
+        model.load_state_dict(torch.load('fatou_model.torch', map_location='cpu'))  
         model.eval()
     else:
-        model = tf.keras.models.load_model('fatou_model.tensorflow')  # 🚨 idem ici
+        model = tf.keras.models.load_model('fatou_model.tensorflow')  
 
     prediction = predict_image(args.framework, args.image, model)
     print(f'Classe prédite : {prediction}')
